@@ -1,0 +1,50 @@
+{% extends 'index.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registration Page</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label> USERNAME</label>
+        <input type="text" placeholder="username" minlength="3" maxlength="6" required><br>
+
+        <label>PASSWORD</label>
+        <input type="text" placeholder="password" minlength="3" maxlength="6" required><br>
+
+        <label>Email</label>
+        <input type="email" placeholder="abc@gmail.com" required><br>
+
+        <label>Phone</label>
+        <input type="tel" placeholder="123-456-6789" maxlength="10"><br>
+
+        <label> Quentity</label>
+        <input type="number" min="0" max="100" value="1"><br>
+
+        <label>Title</label>
+        <label>Mr.</label>
+        <input type="radio" value="Mr.">
+        <label>Ms.</label>
+        <input type="radio" value="Ms.">
+        <label>Phd.</label>
+        <input type="radio" value="Phd."><br>
+
+        <label>Payment</label>
+        <select>
+            <option> Visa</option>
+            <option>Matsercard</option>
+            <option>Credict card</option>
+        </select><br>
+        <label> Comments</label>
+        <textarea rows="3" cols="10"></textarea><br>
+
+        <input type="reset">
+        <input type="submit"><br>
+
+        
+    </form>
+</body>
+{% endblock %}

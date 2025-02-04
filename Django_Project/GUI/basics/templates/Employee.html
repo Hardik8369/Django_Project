@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+  <h1 align="center">Employee</h1>
+  <table align="center">
+    <tr>
+      <td>
+        Employee Name:
+      </td>
+      <td>
+        <input type="text" class="form-control" name="textdepartmentname"></input>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Employee Designation:
+      </td>
+      <td colspan="2">
+        <input type="text" class="form-control" name="textdepartmentdesc"></input>
+      </td>
+    </tr>
+        <tr>
+            <td>
+              Employee Place:
+            </td>
+            <td colspan="2">
+              <input type="text" class="form-control" name="textdepartmentplace"></input>
+            </td>
+          </tr>
+        <tr>
+      <td>
+        <button type="submit"  class="btn btn-primary" name="buttonadd">save</button>
+        
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{result}}
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

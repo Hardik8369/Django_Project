@@ -1,0 +1,41 @@
+{% extends 'index.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h1 align="center">Department</h1>
+        <table align="center">
+            <tr>
+                <td>
+                    Department name:
+                </td>
+                <td>
+                    Department Desc:
+                </td>
+            </tr>
+            {% for department in getdepartment %}
+            <tr>
+                <td>
+                    {{ department.DEPT_NAME }}
+                </td>
+                <td>
+                    {{ department.DEPT_DESC}}
+                </td>
+                <td>
+                    <a href="/departmentupdate/{{ department.id}}" class="btn btn-success">Update</a>
+                </td>
+                <td>
+                    <a href="/departmentdelete/{{department.id}}" class="btn btn-primary"> Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+      </form>
+
+</body>
+{% endblock %}

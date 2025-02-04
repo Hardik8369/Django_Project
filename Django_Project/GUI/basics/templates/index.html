@@ -1,0 +1,112 @@
+<html>
+ 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+  <style>
+    
+    body{
+    margin: 0;
+    padding: 0;
+    background-image: url('https://img.freepik.com/free-vector/abstract-light-blue-wave-background_1055-3072.jpg?t=st=1734770619~exp=1734774219~hmac=e2053ce940e4e433619d944c6fc12c3caabbdda7e234d0ab195c6cfb41f3c917&w=740');
+}
+ul{
+    list-style-type: none;
+    background-color: black;
+    color: white;
+}
+
+ul li{
+    display: inline-block;
+    padding: 10px;
+}
+ul li:hover{
+    background-color: green;
+    color: white;
+}
+.dropdown{display: none;}
+ul li:hover .dropdown{
+    display: block;
+    position: absolute;
+    margin-left: -0.27cm;
+    margin-top: 0.27cm;
+}
+.dropdown ul{
+    margin: 0;
+    padding: 0;
+}
+.dropdown ul li{
+    display: block;
+}
+ul li a{
+  text-decoration: none;
+  text-decoration-color: rgb(10, 10, 10);
+  color: aliceblue;
+}
+  </style>
+
+
+
+  <body>
+  <ul>
+    
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'aboutus' %}">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'register' %}">register</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'calci' %}">calculator</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'counter' %}">Counter</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'predict' %}">Prediction</a>
+    </li>
+
+    <li>Department's List
+        <div class="dropdown">
+            <ul>
+                <li><a class="nav-link" href="{% url 'department' %}">Department</a></li>
+
+                <li><a class="nav-link" href="{% url 'departmentview' %}">Departmentview</a></li>
+            </ul>
+        </div>
+    </li>
+
+
+    <li>Employee's List
+      <div class="dropdown">
+        <ul>
+          <li>
+            <a class="nav-link" href="{% url 'Employee' %}">Employee</a>
+          </li>
+          <li><a class="nav-link" href="{% url 'Employee_details' %}">Employee_details</a></li>
+        </ul>
+      </div>
+      </li>
+
+      <li class="nav-item">
+        <a href="{% url 'logout' %}" class="btn btn-primary">LogOut </a>
+      </li>  
+      
+
+</ul>
+  {% block content %}
+
+  {% endblock %}
+</body>
+
+
+<footer class="footer">
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.05);">
+    © 2024 Copyright:
+    <a class="text-body" href="https://www.karunadutechnologies.com/">KarunaduTechnologies.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+</html>

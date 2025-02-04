@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h1 align="center">Increment/Decrement Counter</h1>
+        <table align="center">
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-primary" name="buttonincrement">Increment</button>
+                    <button type="submit" class="btn btn-success" name="buttondecrement">Decrement</button>
+                    <button type="submit" class="btn btn-warning" name="buttonreset">Reset</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="number" value="{{ result }}" name="textresult">
+                </td>
+            </tr>
+          
+    
+        </table>
+      </form>
+
+</body>
+{% endblock %}

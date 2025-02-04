@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h1 align="center">Calculator</h1>
+        <table align="center">
+          <tr>
+            <td>
+              First Number:
+            </td>
+            <td>
+              <input type="text" name="textfirstnumber">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Second Number:
+            </td>
+            <td>
+              <input type="text" name="textsecondnumber">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <button type="submit" class="btn btn-primary"  name="buttonadd">ADD</button>
+              <button type="submit" class="btn btn-success" name="buttonsub">SUB</button>
+              <button type="submit" class="btn btn-danger"  name="buttonmul">MUL</button>
+              <button type="submit" class="btn btn-warning"  name="buttondiv">DIV</button>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{ result }}
+            </td>
+          </tr>
+    
+    
+        </table>
+      </form>
+
+</body>
+{% endblock %}

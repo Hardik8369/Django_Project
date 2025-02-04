@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+  <h1 align="center">Employee Details</h1>
+  <table align="center">
+    <tr>
+      <td>
+        Employee Name:
+      </td>
+      <td>
+        Employee Designation:
+      </td>
+      <td>
+        Employee Place:
+      </td>
+    </tr>
+    {% for Employee in getEmployee %}
+    <tr>
+      <td>
+        {{ Employee.EMP_NAME }}
+      </td>
+      <td>
+        {{ Employee.EMP_DESI }}
+      </td><br>
+      <td>
+        {{ Employee.EMP_PLACE }}
+      </td>
+      <td>
+        <a href="/Employee_update/{{Employee.id}}" class="btn btn-primary"> Update</a>
+      </td>
+      <td>
+        <a href="/Employee_delete/{{Employee.id}}" class="btn btn-primary"> Delete</a>
+      </td>
+    </tr>
+    {% endfor %}  
+  </table>
+</form>
+{% endblock %}

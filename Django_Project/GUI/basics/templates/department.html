@@ -1,0 +1,43 @@
+{% extends 'index.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h1 align="center">Department</h1>
+        <table align="center">
+            <tr>
+                <td>
+                    Department Name:
+                </td>
+                <td>
+                    <input type="text" name="textdepartmentname">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Description
+                </td>
+                <td>
+                    <input type="text" name="textdepartmentdesc">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-primary" name="buttonadd">Save</button>
+                </td>
+            </tr> 
+            <tr>
+                <td>
+                    {{ result }}
+                </td>
+            </tr>
+        </table>
+      </form>
+
+</body>
+{% endblock %}

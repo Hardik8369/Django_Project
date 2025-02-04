@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+  <h1>Department</h1>
+  <table align="center">
+    <tr>
+      <td>
+        Department Name:
+      </td>
+      <td>
+        <input type="text" class="form-control" value="{{getdepartments.DEPT_NAME}}"name="textdepartmentname"></input>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Description:
+      </td>
+      <td>
+        <input type="text" class="form-control" value="{{getdepartments.DEPT_DESC}}" name="textdepartmentdesc"></input>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="submit"  class="btn btn-primary" name="submit">update</button>
+        
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{result}}
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

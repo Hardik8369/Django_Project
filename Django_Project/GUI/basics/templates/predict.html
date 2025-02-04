@@ -1,0 +1,56 @@
+{% extends 'index.html' %}
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <h1 align="center">Exam Marks Prediction</h1>
+        <table align="center">
+          <tr>
+            <td>
+              Enter the Hours:
+            </td>
+            <td>
+              <input type="text" name="texthours">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Enter the Age:
+            </td>
+            <td>
+              <input type="text" name="textage">
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Enter the Internet(1/0):
+            </td>
+            <td>
+              <input type="text" name="textinternet">
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="2">
+              <button type="submit" class="btn btn-primary"  name="buttonadd">Predict</button>
+              
+            </td>
+          </tr>
+          <tr>
+            <td>
+              {{ result }}
+            </td>
+          </tr>
+    
+    
+        </table>
+      </form>
+
+</body>
+{% endblock %}

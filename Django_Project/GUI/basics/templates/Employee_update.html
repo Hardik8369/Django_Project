@@ -1,0 +1,44 @@
+{% extends 'index.html' %}
+{% block content %}
+  <form method="POST">
+    {% csrf_token %}
+  <h1>Employee</h1>
+  <table align="center">
+    <tr>
+      <td>
+        Employee Name:
+      </td>
+      <td>
+        <input type="text" class="form-control" value="{{getEmployee.EMP_NAME}}"name="textdepartmentname"></input>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Designation:
+      </td>
+      <td>
+        <input type="text" class="form-control" value="{{getEmployee.EMP_DESI}}" name="textdepartmentdesc"></input>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Place:
+      </td>
+      <td>
+        <input type="text" class="form-control" value="{{getEmployee.EMP_PLACE}}" name="textdepartmentplace"></input>
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="submit"  class="btn btn-primary" name="submit">update</button>
+        
+      </td>
+    </tr>
+    <tr>
+      <td>
+        {{result}}
+      </td>
+    </tr>
+  </table>
+</form>
+{% endblock %}
